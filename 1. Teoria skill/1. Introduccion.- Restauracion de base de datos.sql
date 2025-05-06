@@ -20,3 +20,12 @@ GO
 
 USE MASTER
 GO
+
+-- Backup - FULL
+BACKUP DATABASE AdventureWorks2022 TO DISK = N'D:\SQL2022\Backup\AW_FULL.BAK' WITH NOFORMAT, NOINIT, 
+NAME = N'Copia de seguridad completa', SKIP, NOREWIND
+
+-- Comprimir backup
+BACKUP DATABASE AdventureWorks2022 TO DISK = N'D:\SQL2022\Backup\AW_FULL_Y.BAK' WITH INIT
+
+SELECT @@VERSION;
